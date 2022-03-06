@@ -1,0 +1,143 @@
+:root {
+    --color-box-width: 150px;
+    --color-container-margin: 10px 2px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: hsl(0, 2%, 8%);
+}
+
+.nav-bar {
+    height: 3%;
+    top: 0px;
+    margin: 2rem;
+
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    align-self: center;
+}
+
+.correct-display {
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.correct-box {
+    
+    height: var(--color-box-width);
+    width: calc(var(--color-box-width)*0.7);
+    margin: var(--color-container-margin);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.correct-symbol {
+    height: calc(var(--color-box-width)*0.16);
+    width: calc(var(--color-box-width)*0.16);
+    border-radius: 100%;
+    background: rgb(43, 38, 38);
+}
+
+.correct-row {
+    background: rgb(236, 231, 231);
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+
+
+.color-container {
+    margin: var(--color-container-margin);
+    transition: margin 1s ease-in-out;
+   
+    
+}
+
+.color {
+    width: var(--color-box-width);
+    height: var(--color-box-width);
+    transition: transform 300ms ease-in-out;
+    
+}
+
+.error-display {
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+}
+
+.error-box {
+    height: var(--color-box-width);
+    width: calc(var(--color-box-width)/2);
+    margin: var(--color-container-margin);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;    
+    
+    
+    grid-template-rows: calc(var(--color-box-width)/3);
+
+}
+
+.error-symbol {
+    margin: calc(var(--color-box-width)*0.08) calc(var(--color-box-width)*0.08);;
+    height: calc(var(--color-box-width)*0.08);
+    width: calc(var(--color-box-width)*0.08);
+    border-radius: 100%;
+    background: rgb(253, 67, 67);
+
+}
+
+/*@media only screen and (max-width: 540px) {
+    .color {
+        width: 40px;
+        height: 40px;
+    }
+}
+*/
+
+[data-selected="true"]  {
+    transform: translateY(-2px);
+}
+
+.fixed-color {
+    pointer-events: none;
+}
+
+.fixed-color::after {
+    height: 5%;
+    width: 100%;
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 90%;
+    background: rgb(248, 218, 205);
+}

@@ -1,2 +1,1 @@
-# colorGame
-color range game
+https://andypatel299.github.io/color-game/
